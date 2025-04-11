@@ -1,0 +1,204 @@
+:root {
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --background-gradient: linear-gradient(135deg, #0b1220, #0e1a30);
+    --background-radial: radial-gradient(circle, rgba(0, 174, 255, 0.3), transparent 70%);;
+    --background-color: #0B2239;
+    --background-color-light: #162d57;
+    --border-color:  rgba(0, 174, 255, 0.15);
+    --boxshadow-color: rgba(0, 0, 0, 0.3);
+    --navbar-color: rgba(11, 34, 57, 0.85);
+    --filter-color: (0 0 5px rgba(0, 174, 255, 0.5));
+    --text-color: #ffffff;
+    --hover-color: rgba(0, 174, 255, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    background: var(--background-gradient);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-color);
+}
+
+.glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--background-radial);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(100px);
+}
+
+.glow.one {
+    top: 20%;
+    left: 10%;
+}
+
+.glow.two {
+    bottom: 15%;
+    right: 15%;
+}
+
+.navbar-container * {
+    background: transparent;
+}
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto 0 auto;
+    width: 80%;
+    background: var(--navbar-color);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 10;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px var(--boxshadow-color);
+    overflow: hidden;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.navbar-logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: white;
+    white-space: nowrap;
+}
+
+.navbar-logo img {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow var(--filter-color);
+    object-fit: contain;
+}
+
+.navbar-items {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-items a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    font-weight: 500;
+}
+
+.navbar-items a:hover {
+    color: var(--hover-color);
+    text-shadow: 0 0 8px var(--hover-color);
+}
+
+.navbar-items a i {
+    font-size: 1.1em;
+}
+
+
+.navbar-items a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--hover-color);
+    transition: width 0.3s ease;
+}
+
+.navbar-items a:hover::after {
+    width: 100%;
+}
+
+.span-navbar-host {
+    color: var(--hover-color);
+}
+
+.content-container {
+    text-align: center;
+    margin-top: 15%;
+    z-index: 10;
+}
+
+.h1-content span.highlight {
+    color: var(--hover-color);
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    min-height: 20rem;
+    padding: 2rem;
+}
+
+.product-card {
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    max-width: 400px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px var(--boxshadow-color);
+}
+
+.product-card p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ordernow-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    background: var(--hover-color);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ordernow-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--boxshadow-color);
+}
+
+.container-paypal * {
+    background: transparent;
+}
+
+.container-paypal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+    min-height: 20rem;
+    padding: 2rem;
+    b
+}
+
+
+#paypal-button-container-P-6C707287NE418131SM733KHY {
+
+}
