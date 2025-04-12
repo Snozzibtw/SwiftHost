@@ -182,23 +182,3 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px var(--boxshadow-color);
 }
-
-.container-paypal * {
-    background: transparent;
-}
-
-.container-paypal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 5rem;
-    min-height: 20rem;
-    padding: 2rem;
-    b
-}
-
-
-#paypal-button-container-P-6C707287NE418131SM733KHY {
-
-}
