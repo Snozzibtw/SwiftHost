@@ -22,12 +22,7 @@
 
 body {
     background: var(--background-gradient);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-    min-height: 100vh;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 /* Optimized Glow Effects */
@@ -39,7 +34,6 @@ body {
     border-radius: 50%;
     z-index: 0;
     filter: blur(60px);
-    will-change: transform, opacity;
     pointer-events: none;
 }
 
@@ -61,16 +55,17 @@ body {
     margin: 2rem auto 0 auto;
     width: 80%;
     background: var(--navbar-color);
-    backdrop-filter: blur(5px);
+    /* You can experiment with commenting out backdrop-filter if needed */
+ 
     border-radius: 12px;
     padding: 1rem 2rem;
     position: relative;
     z-index: 10;
     border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px var(--boxshadow-color);
     isolation: isolate;
 }
 
+/* Remove background overrides from children */
 .navbar-container * {
     background: transparent;
 }
@@ -79,7 +74,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    will-change: transform;
+    /* Removed will-change here since the logo is static */
 }
 
 .navbar-logo h1 {
@@ -93,6 +88,19 @@ body {
     height: 40px;
     width: auto;
     object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 912px) {
+    .navbar-logo img {
+        display: none;
+    }
+    .navbar-logo h1 {
+        font-size: 1.2rem;
+    }
+    .navbar-items a {
+        font-size: 10px;
+    }
 }
 
 .navbar-items {
@@ -167,10 +175,10 @@ body {
     border: 1px solid var(--border-color);
     max-width: 400px;
     width: 100%;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 8px 32px var(--boxshadow-color);
+    /* Consider reducing or removing backdrop-filter if performance issues persist */
+ 
     isolation: isolate;
-    will-change: transform;
+    /* Removed will-change from static cards */
 }
 
 .product-card p {
@@ -190,6 +198,7 @@ body {
     border-radius: 6px;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Keep will-change here since this element animates on hover */
     will-change: transform;
 }
 
@@ -209,17 +218,16 @@ body {
     gap: 2rem;
     margin-top: 5rem;
     padding: 2rem;
-    will-change: transform;
+    /* Removed will-change from the container */
 }
 
 .grid-item-aboutus {
     border-radius: 6px;
     padding: 2rem;
     border: 1px solid var(--border-color);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 8px 32px var(--boxshadow-color);
+ 
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    will-change: transform;
+    /* Removed will-change from grid items */
     isolation: isolate;
 }
 
@@ -248,16 +256,16 @@ body {
     background: var(--background-color-light);
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px var(--boxshadow-color);
     isolation: isolate;
 }
 
-.footer-content {
+.footer-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     flex-direction: column;
+    margin-bottom: 2rem;
 }
 
 .box-errorClientRole {
@@ -267,7 +275,7 @@ body {
     max-width: 300px;
     text-align: center;
     margin: 0 auto;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
