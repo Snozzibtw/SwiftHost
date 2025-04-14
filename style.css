@@ -103,6 +103,18 @@ body {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .navbar-container {
+        margin: 1rem auto 0 auto;
+    }
+    .navbar-items a{
+        font-size: 9px;
+    }
+    .navbar-container h1 {
+        display: none !important;
+    }
+}
+
 .navbar-items {
     display: flex;
     gap: 2rem;
@@ -158,12 +170,30 @@ body {
     color: var(--hover-color);
 }
 
+.products-title {
+    font-size: 2rem;
+    margin-top: 5rem;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+}
+
+.products-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: var(--hover-color);
+    bottom: -5px;
+    left: 25%;
+    transition: width 0.3s ease;
+}
+
 /* Product Cards */
 .products-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
     min-height: 20rem;
     padding: 2rem;
     contain: layout paint style;
@@ -265,7 +295,8 @@ body {
     align-items: center;
     gap: 1rem;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
 }
 
 .box-errorClientRole {
